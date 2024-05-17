@@ -1,4 +1,3 @@
-import './db';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
@@ -15,5 +14,5 @@ db.on('disconnected', () => {
     console.log('database disconnected');
 });
 db.once('open', () => {
-    console.log(`database connected to ${db.name} on ${db.host}`); 
+    console.log(`database connected to ${db.name} on ${db.host}`);
 })
