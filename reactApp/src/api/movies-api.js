@@ -30,3 +30,25 @@ export const signup = async (username, password) => {
     });
     return response.json();
 };
+
+export const getPopularMovies = async () => {
+  const response = await fetch(
+    'http://localhost:8080/api/movies/tmdb/popular', {
+    headers: {
+      'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  )
+  return response.json();
+};
+
+export const getTopRated = async () => {
+  const response = await fetch(
+    'http://localhost:8080/api/movies/tmdb/topRated', {
+    headers: {
+      'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  )
+  return response.json();
+};

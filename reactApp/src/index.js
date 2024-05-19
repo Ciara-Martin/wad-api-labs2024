@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes, Navigate, Link } from "react-router-dom";
 import PublicPage from "./pages/publicPage";
 import ProfilePage from "./pages/profilePage";
 import MoviesPage from "./pages/moviesPage";
+import PopularMoviesPage from "./pages/popularPage";
+import TopRatedPage from "./pages/topRatedPage";
 import { QueryClientProvider, QueryClient } from "react-query";
 import LoginPage from "./pages/loginPage";
 import AuthContextProvider from "./contexts/authContext";
@@ -35,6 +37,12 @@ const App = () => {
               <Link to="/movies">Movies</Link>
             </li>
             <li>
+              <Link to="/popularmovies">Popular Movies</Link>
+            </li>
+            <li>
+              <Link to="toprated">Top Rated Movies</Link>
+            </li>
+            <li>
               <Link to="/profile">Profile</Link>
             </li>
           </ul>
@@ -44,6 +52,8 @@ const App = () => {
             <Route path="/signup" element={ <SignUpPage /> } />
             <Route element={<ProtectedRoutes />}>
               <Route path="/movies" element={<MoviesPage />} />
+              <Route path="/popularmovies" element={<PopularMoviesPage />} />
+              <Route path="/toprated" element={<TopRatedPage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
